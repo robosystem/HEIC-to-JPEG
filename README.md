@@ -6,10 +6,10 @@ This Python script, `heic_to_jpeg.py`, is designed to convert HEIC (High-Efficie
 
 ## Prerequisites
 
-1. **Install Pillow and pillow-heif package:**
+1. **Install Pillow, pillow-heif and tqdm package:**
 
     ```bash
-    pip install Pillow pillow-heif
+    pip install Pillow pillow-heif tqdm
     ```
 
 ## Usage
