@@ -21,6 +21,9 @@ def main():
     folder_dir = 'your_custom_folder_path'
     script_directory = os.path.dirname(os.path.abspath(__file__))
     input_directory = os.path.join(script_directory, folder_dir)
+    # Skip AppleDouble metadata files created by macOS when copying to non-APFS volumes
+    if file.startswith("._"):
+        continue
 
     for root, _, files in os.walk(input_directory):
         for file in tqdm(files):
