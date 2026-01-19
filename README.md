@@ -4,12 +4,12 @@
 
 This Python script, `heic_to_jpeg.py`, is designed to convert HEIC (High-Efficiency Image Format) files to JPEG format. Before using the script, ensure that you have installed the required packages using pip.
 
-## Prerequisites
+## Requirements
 
 1. **Install Pillow, pillow-heif and tqdm package:**
 
     ```bash
-    pip install Pillow pillow-heif tqdm
+    pip install -r requirements.txt
     ```
 
 ## Usage
@@ -18,44 +18,22 @@ This Python script, `heic_to_jpeg.py`, is designed to convert HEIC (High-Efficie
 
     Download the `heic_to_jpeg.py` script to your local machine.
 
-2. **Edit the Script:**
+2. **Run the Script:**
 
-    Open the script in a text editor of your choice. Replace the `folder_dir` variable with the path to the folder containing your HEIC files.
-
-    ```python
-    # Replace 'your_custom_folder_path' with the actual path to your folder containing HEIC files
-    folder_dir = 'your_custom_folder_path'
-    ```
-
-3. **Run the Script:**
-
-    Open a terminal and navigate to the directory where the script is located. Run the following command:
+    Open a terminal and run the script pointing to the directory where the HEICs are located.
 
     ```bash
-    python heic_to_jpeg.py
+    python heic_to_jpeg.py --help
+
+    usage: heic2jpg.py [-h] [-r] path
+
+    Convert HEIC in JPG.
+
+    positional arguments:
+      path          path of file HEIC or folder containing HEIC files.
+
+    options:
+      -h, --help    show this help message and exit
+      -r, --remove  remove original HEIC file after successful operation.
     ```
 
-4. **Optional: Keep Original HEIC Files:**
-
-    By default, the script will remove the original .heic file after successfully converting it to JPEG. If you want to retain the original .heic files, follow these steps:
-
-    - Locate the following line in the script:
-
-        ```python
-        os.remove(input_file)
-        ```
-
-    - Comment out the line by adding a `#` at the beginning:
-
-        ```python
-        # os.remove(input_file)
-        ```
-
-    This change will keep the original .heic file in the specified folder.
-
-## Important Note
-
-- The script will overwrite existing JPEG files with the same name in the specified folder.
-- Ensure that you have a backup of your HEIC files before running the script, especially if you choose to remove the original .heic files.
-
-Feel free to reach out if you encounter any issues or have questions about using the `heic_to_jpeg.py` script.
